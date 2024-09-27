@@ -1,7 +1,6 @@
-﻿
-
-bool isExitSelectet = false;
+﻿bool isExitSelectet = false;
 List<string> toDolist = new List<string>();
+
 while (!isExitSelectet)
 {
    Console.WriteLine();
@@ -40,83 +39,115 @@ while (!isExitSelectet)
 
 }
 
-void RemoveToDo()
-{
-    Console.ReadLine();
-    bool isValidMessage=false;
-    while (!isValidMessage) 
-    { 
-    if(toDolist.Count == 0)
-    {   
-        Console.WriteLine("No Task In ToDo List:");
-    }
-    Console.WriteLine("Tasks in ToDo List:");
-    SeeAllToDo();
-    Console.Write("Enter Index to Remove:");
-    string inputIndex=Console.ReadLine();
-    if(inputIndex == "")
-    {
-        Console.WriteLine("invalid Index: can not be empty.");
-            continue;
-    }
-    if(int.TryParse(inputIndex, out int index))
-    {
-        if (index >= 1 && index <= toDolist.Count) 
-        {
-                isValidMessage = true;
-                string toDOForDelete=toDolist[index-1];
-            toDolist.RemoveAt(index-1);
-            Console.WriteLine($"{toDOForDelete} deleted!");
-        }
-        else
-        {
-            Console.WriteLine("Invalid Index: Not in range!");
-        }
-    }
-    else
-    {
-        Console.WriteLine("invalid Index: index format is invalid.");
-    }
-    }
-    
-}
+
 
 void SeeAllToDo()
 {
-    Console.ReadLine();
+    if (!allowContinue())
+        return;
+   
+    
+    writeWithWhiteSpace("ToDo Item Are:");
+
     for (int i = 0; i < toDolist.Count; i++) 
     {
-        string item = toDolist[i];
+        string? item = toDolist[i];
         Console.WriteLine($"{i+1}:{item}");
     }
 }
 
 void AddToDo()
 {
-    Console.ReadLine();
-    bool isValidTask=false;
-    while (!isValidTask)
+    string inputMessage=string.Empty;
+    do
     {
-       Console.WriteLine("Please Enter Neew Task:");
-       string newToDo=Console.ReadLine();
-       if (newToDo == "")
-       {
-           Console.WriteLine("Please ENter a New Task.");
-       }
-       else if (toDolist.Contains(newToDo))
-       {
-           Console.WriteLine("New Task Dosnt be Dublicated!");
-       }
-       else
-       {
-           toDolist.Add(newToDo);
-           isValidTask = true;
-       }
-       
+        writeWithWhiteSpace("Enter ToDo To Add:");
+        inputMessage = Console.ReadLine();
+    } while (isValidMessage(inputMessage));
+             toDolist.Add(inputMessage); 
+}
+
+void RemoveToDo()
+{
+    if (!allowContinue())
+    {
+        return;
     }
+
+    Console.ReadLine();
+    bool isValidMessage = false;
+    while (!isValidMessage)
+    {
+
+        writeWithWhiteSpace("Tasks in ToDo List:");
+        SeeAllToDo();
+        Console.Write("Enter Index to Remove:");
+        string inputIndex = Console.ReadLine();
+        if (inputIndex == "")
+        {
+            Console.WriteLine("invalid Index: can not be empty.");
+            continue;
+        }
+        if (int.TryParse(inputIndex, out int index))
+        {
+            if (index >= 1 && index <= toDolist.Count)
+            {
+                isValidMessage = true;
+                string toDOForDelete = toDolist[index - 1];
+                toDolist.RemoveAt(index - 1);
+                Console.WriteLine($"{toDOForDelete} deleted!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid Index: Not in range!");
+            }
+        }
+        else
+        {
+            Console.WriteLine("invalid Index: index format is invalid.");
+        }
+    }
+
 }
 
 
-Console.ReadLine();
+bool allowContinue()
+{
+    if (toDolist.Count == 0)
+    {
+        Console.WriteLine();
+        Console.WriteLine("No Task In ToDo List:");
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
 
+void writeWithWhiteSpace(string text)
+{
+    Console.WriteLine();
+    Console.WriteLine(text);
+}
 
+bool isValidMessage(string message)
+{
+    bool isValid = true;
+    if (message == "")
+    {
+        Console.WriteLine("invalid : can not be empty:");
+        isValid= false;
+    }
+    else if (toDolist.Contains(message))
+    {
+        Console.WriteLine("invalid: New Task Dosnt be Dublicated!");
+        isValid= false;
+    }
+    return isValid;
+}
+
+bool isValidForRemove(string message)
+{
+
+}
