@@ -45,9 +45,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "67-ThisKeyword", "67-ThisKe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "68-NamedParameter", "68-NamedParameter\68-NamedParameter.csproj", "{A006F769-8F15-437A-BD2B-D18E3BD089BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "69-Constant-ReadOnly", "69-Constant-ReadOnly\69-Constant-ReadOnly.csproj", "{8E20C14E-A1BE-439E-BF1C-76D41C73A6FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "69-Constant-ReadOnly", "69-Constant-ReadOnly\69-Constant-ReadOnly.csproj", "{8E20C14E-A1BE-439E-BF1C-76D41C73A6FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "70-Propery-Method-Feild", "70-Propery-Method-Feild\70-Propery-Method-Feild.csproj", "{0F044FCE-9BA7-4CCE-99A7-BBECD04FC2A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "70-Propery-Method-Feild", "70-Propery-Method-Feild\70-Propery-Method-Feild.csproj", "{0F044FCE-9BA7-4CCE-99A7-BBECD04FC2A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "71-ObjectInitialazer-Constructor", "71-ObjectInitialazer-Constructor\71-ObjectInitialazer-Constructor.csproj", "{534744F1-4E30-4F13-A5BF-C29026B6AB8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "72-StaticClassMethod", "72-StaticClassMethod\72-StaticClassMethod.csproj", "{15AF43A0-EAD7-4518-AAE6-D3EDEA398B73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,6 +151,14 @@ Global
 		{0F044FCE-9BA7-4CCE-99A7-BBECD04FC2A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F044FCE-9BA7-4CCE-99A7-BBECD04FC2A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F044FCE-9BA7-4CCE-99A7-BBECD04FC2A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{534744F1-4E30-4F13-A5BF-C29026B6AB8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{534744F1-4E30-4F13-A5BF-C29026B6AB8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{534744F1-4E30-4F13-A5BF-C29026B6AB8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{534744F1-4E30-4F13-A5BF-C29026B6AB8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15AF43A0-EAD7-4518-AAE6-D3EDEA398B73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15AF43A0-EAD7-4518-AAE6-D3EDEA398B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15AF43A0-EAD7-4518-AAE6-D3EDEA398B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15AF43A0-EAD7-4518-AAE6-D3EDEA398B73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
