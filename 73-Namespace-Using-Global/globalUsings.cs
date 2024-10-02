@@ -1,0 +1,1 @@
+﻿global using _73_Namespace_Using_Global.Thirds;
